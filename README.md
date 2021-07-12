@@ -1,4 +1,4 @@
-# desafio hotel front
+# desafio hotel front end
 
 ## O que é
 
