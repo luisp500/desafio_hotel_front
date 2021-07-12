@@ -24,15 +24,15 @@ export class ReservaService {
   });
 
   getReservasAberto(){
-    return this.http.get('http://localhost:5000/reservas/abertas');
+    return this.http.get('https://lhr-desafio-hotel.herokuapp.com/reservas/abertas');
   }
 
   getReservasFechado(){
-    return this.http.get('http://localhost:5000/reservas/fechadas');
+    return this.http.get('https://lhr-desafio-hotel.herokuapp.com/reservas/fechadas');
   }
 
   postReserva(form){
-    return this.http.post('http://localhost:5000/reservas/checkin', form).subscribe(
+    return this.http.post('https://lhr-desafio-hotel.herokuapp.com/reservas/checkin', form).subscribe(
       data => {
         console.log("post request is successful", data);
       },

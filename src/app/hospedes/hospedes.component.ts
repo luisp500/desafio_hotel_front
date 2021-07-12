@@ -8,7 +8,7 @@ import { HospedeService } from '../shared/hospede.service';
 })
 export class HospedesComponent implements OnInit {
 
-  hospedes$: [];
+  hospedes$: Object;
 
   constructor(private hs: HospedeService) { }
 
@@ -18,19 +18,19 @@ export class HospedesComponent implements OnInit {
 
   ngOnInit() {
     this.hs.getHospedes().subscribe(
-      hs => this.hospedes$ = hs.content
+      hs => this.hospedes$ = hs
     );
   }
 
   onSubmit() {
     this.submitted = true;
-      let result = this.hs.postHospede(this.hs.form.value);
+      const result = this.hs.postHospede(this.hs.form.value);
       console.log(result);
       if (result) {
         this.showSuccessMessage = true;
         this.submitted = false;
         setTimeout(() => {
-          this.showSuccessMessage = false
+          this.showSuccessMessage = false;
         }, 3000);
         this.hs.form.reset();
       }

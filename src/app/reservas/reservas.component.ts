@@ -13,8 +13,8 @@ import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrie
 
 export class ReservasComponent implements OnInit {
 
-  reserva$: [];
-  hospedes$: [];
+  reserva$: Object;
+  hospedes$: Object;
   hospede$: Object;
   hospedesOption: Array<IOption>;
   selectedHospede: string = '3';
@@ -28,10 +28,10 @@ export class ReservasComponent implements OnInit {
 
   ngOnInit() {
     this.rs.getReservasAberto().subscribe(
-      rs => this.reserva$ = rs.content
+      rs => this.reserva$ = rs
     );
     this.hs.getHospedes().subscribe(
-      hs => this.hospedes$ = hs.content
+      hs => this.hospedes$ = hs
     );
   }
 
@@ -40,11 +40,11 @@ export class ReservasComponent implements OnInit {
 
     if (this.selectedRadio === 'abertas') {
       this.rs.getReservasAberto().subscribe(
-        rs => this.reserva$ = rs.content
+        rs => this.reserva$ = rs
       );
     } else {
       this.rs.getReservasFechado().subscribe(
-        rs => this.reserva$ = rs.content
+        rs => this.reserva$ = rs
       );
     }
   }

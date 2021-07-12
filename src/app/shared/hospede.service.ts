@@ -13,6 +13,7 @@ export class HospedeService {
   constructor(private http: HttpClient) { }
 
   createResult: boolean;
+  content: [];
 
   form = new FormGroup({
     // $key: new FormControl(null),
@@ -22,15 +23,15 @@ export class HospedeService {
   });
 
   getHospedes(){
-    return this.http.get('http://localhost:5000/hospedes');
+    return this.http.get('https://lhr-desafio-hotel.herokuapp.com/hospedes');
   }
 
   getHospede(id:BigInteger){
-    return this.http.get('http://localhost:5000/hospedes/' + id);
+    return this.http.get('https://lhr-desafio-hotel.herokuapp.com/hospedes/' + id);
   }
 
   postHospede(form){
-    return this.http.post('http://localhost:5000/hospedes', form).subscribe(
+    return this.http.post('https://lhr-desafio-hotel.herokuapp.com/hospedes', form).subscribe(
       data => {
         console.log("post request is successful", data);
       },
