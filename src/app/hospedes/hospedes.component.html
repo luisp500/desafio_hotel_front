@@ -58,7 +58,7 @@
                         <th>Documento</th>
                         <th>Telefone</th>
                         </thead>
-                        <ng-container *ngFor="let hospede of hospedes$">
+                        <ng-container *ngFor="let hospede of hospedes$ | ObjToArray ">
                             <tr>
                                 <td>{{ hospede.nome }}</td>
                                 <td>{{ hospede.documento }}</td>

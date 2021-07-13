@@ -86,7 +86,7 @@
                     <th width="33.33%">Documento</th>
                     <th width="33.33%">Valor gasto (R$)</th>
                   </thead>
-                  <ng-container *ngFor="let reserva of reserva$">
+                  <ng-container *ngFor="let reserva of reserva$ | ObjToArray">
                     <tr>
                       <td>{{ reserva.hospede.nome }}</td>
                       <td>{{ reserva.hospede.documento }}</td>

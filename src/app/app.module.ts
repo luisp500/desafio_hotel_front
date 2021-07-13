@@ -15,6 +15,7 @@ import { HospedeService } from './shared/hospede.service';
 import { ReservaService } from './shared/reserva.service';
 import { ReservasComponent } from './reservas/reservas.component';
 import {SelectModule} from 'ng-select';
+import {ObjToArrayPipe} from './objToArray.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import {SelectModule} from 'ng-select';
     NavbarComponent,
     HospedesComponent,
     IndexComponent,
-    ReservasComponent
+    ReservasComponent,
+    ObjToArrayPipe
+
   ],
   imports: [
     BrowserModule,
