@@ -25,7 +25,7 @@
                     <label for="pessoa">Pessoa</label>
                     <select class="form-control" (change)="optionSelected($event.target.value)">
                         <option value="">Selecione um hóspede</option>
-                        <ng-container *ngFor="let hospede of hospedes$">
+                        <ng-container *ngFor="let hospede of hospedes$ | ObjToArray">
                           <option [value]="hospede.id">{{hospede.nome}}</option>
                         </ng-container>
                     </select>
